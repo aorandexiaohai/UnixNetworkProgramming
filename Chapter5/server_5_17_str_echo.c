@@ -4,6 +4,8 @@
 2)当捕获信号时，必须处理被中断的系统调用
 3)SIGCHLD的信号处理函数必须正确编写，应使用waitpid函数以免留下僵尸进程
 */
+
+//服务器处理文本
 #include "base_net.h"
 #include <sys/socket.h>
 #include <arpa/inet.h>
