@@ -1,5 +1,7 @@
 #ifndef __BASE_NEXT_H_
 #define __BASE_NEXT_H_
+#include <stdlib.h>
+
 #define MAXLINE 1024
 #define LISTENQ 5
 struct argsType{
@@ -9,4 +11,10 @@ struct argsType{
 struct resultType{
     int sum;
 };
+static void err_msg(const char* str)
+{
+    printf("%s", str);
+    fflush(stdout);
+    exit(-1);
+}
 #endif//__BASE_NEXT_H_
