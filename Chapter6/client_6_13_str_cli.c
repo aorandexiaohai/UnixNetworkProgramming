@@ -10,6 +10,7 @@
 #include "Chapter3/read_write_helper.h"
 #include "base_net.h"
 void str_cli(FILE* fp, int sockfd);
+//修复了client_6_9_str_cli.c的缓冲区问题
 
 // #define MAXLINE 2048
 int main(int argc, char** argv)
