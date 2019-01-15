@@ -1,6 +1,7 @@
 #ifndef __BASE_NEXT_H_
 #define __BASE_NEXT_H_
 #include <stdlib.h>
+#include <stdio.h>
 
 #define MAXLINE 1024
 #define LISTENQ 5
