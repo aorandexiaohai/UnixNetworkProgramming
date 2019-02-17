@@ -9,7 +9,12 @@ void dg_cli(FILE* fp, int sockfd, const struct sockaddr_in* pservaddr, socklen_t
     char sendline[MAXLINE] = {};
     char recvline[MAXLINE + 1] = {};
     while(fgets(sendline, MAXLINE, fp) != NULL){
-        sendto(sockfd, sendline, strlen(sendline),0,(const sockaddr*)pservaddr,servlen);
+        sendto(sockfd, sendline, strlen(sendline),0,(const struct sockaddr*)pservaddr,servlen);
+        /*
+            第5/6个参数为空，这告知内核我们并不关心应答数据包由谁发送
+            这样做存在一个风险:
+                任何进程(本机和非本机)都可以向本客户的IP和端口发送数据报
+        */
         int n=recvfrom(sockfd, recvline, MAXLINE,0,NULL,NULL);
         recvline[n] = 0;
         fputs(recvline, stdout);
