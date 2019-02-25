@@ -44,4 +44,6 @@ static const char* getParameter2(int argc, char** argv, const char* key, const c
     else return res;
 }
 
+#define DEBUG_ALL_PLATFORM
+
 #endif//__BASE_NEXT_H_
